@@ -1,0 +1,72 @@
+import random
+import numpy
+
+class Matrix:
+    def __init__ (self):
+        self.Matrix = []
+        self.C = []
+    def dodajm(self,obiekt):
+        self.Matrix.append(obiekt)
+    def rozmiar(self):
+        print self.Matrix[1]
+        return self.Matrix
+    def printc(self):
+        return self.C
+    def fu1(self, i, j):
+        A = []
+        B = []
+
+
+        for a in range(i):
+
+            for b in range(j):
+                B.insert(b, random.randint(0, 5))
+
+            A.append(B)
+            B=[]
+
+        self.Matrix.append(A)
+
+    def fu2(self, i, j):
+        A = self.Matrix[i]
+        B = self.Matrix[j]
+        D = []
+        tmp1 = []
+        tmp2 = []
+        x = len(A)
+        tA=A[1]
+        x2=len(tA)
+        t = B[1]
+        y = len(t)
+        z = len(B)
+        c=2
+        d=-1
+        for a in range(x):
+            c=c-1
+            d=d+1
+            for b in range(y):
+                tmp1.append(A[a][b]*B[b][a])
+                tmp2.append(A[c][b]*B[b][d])
+
+
+
+        D.append(tmp1[0]+tmp1[1])
+        D.append(tmp2[2]+tmp2[3])
+        D.append(tmp2[0]+tmp2[1])
+        D.append(tmp1[2]+tmp1[3])
+
+
+        self.C.append(D)
+
+
+
+
+
+
+s = Matrix()
+s.fu1(2,2)
+s.fu1(2,2)
+s.fu2(0,1)
+
+print s.rozmiar()
+print s.printc()
