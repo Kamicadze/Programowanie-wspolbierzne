@@ -1,10 +1,9 @@
-
 import pygame, sys, os
 from pygame.locals import *
 
 pygame.init()
 
-window = pygame.display.set_mode((720, 576)) #okno
+window = pygame.display.set_mode((400, 400)) #okno
 pygame.display.set_caption('Gra w pyGame') #etykieta
 graphic = pygame.image.load("d3.png") #ladowanie pliku graficznego
 screen = pygame.display.get_surface() #pobieranie informacji o ekranie
@@ -18,6 +17,8 @@ def input(events):
             sys.exit(0)
         else:
             print event
+    pygame.display.update()
+
 
 while True:
     input(pygame.event.get())
